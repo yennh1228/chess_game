@@ -20,6 +20,8 @@ class _ChessGameState extends State<ChessGame> {
       ),
       body: Container(
         color: const Color(0xff607D8B),
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        alignment: Alignment.center,
         child: GridView.builder(
             itemCount: 64,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
