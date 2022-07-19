@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ChessGame extends StatefulWidget {
@@ -9,31 +8,30 @@ class ChessGame extends StatefulWidget {
 }
 
 class _ChessGameState extends State<ChessGame> {
-  int row = 8;
-  int totalNumOfSquare = 64;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Chess"),
+        title: const Text("Chess"),
       ),
       body: Container(
+        height: double.infinity,
         color: const Color(0xff607D8B),
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         alignment: Alignment.center,
         child: GridView.builder(
+            shrinkWrap: true,
             itemCount: 64,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 8,
             ),
             itemBuilder: (BuildContext context, int index) {
               if ((index + index ~/ 8) % 2 == 0) {
-                return const Card(
+                return Container(
                   color: Colors.white,
                 );
               } else {
-                return const Card(
+                return Container(
                   color: Colors.black,
                 );
               }
