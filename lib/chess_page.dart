@@ -19,19 +19,22 @@ class _ChessGameState extends State<ChessGame> {
         title: Text("Chess"),
       ),
       body: Container(
+        height: double.infinity,
+        alignment: Alignment.center,
         color: const Color(0xff607D8B),
         child: GridView.builder(
+            shrinkWrap: true,
             itemCount: 64,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 8,
             ),
             itemBuilder: (BuildContext context, int index) {
               if ((index + index ~/ 8) % 2 == 0) {
-                return const Card(
+                return Container(
                   color: Colors.white,
                 );
               } else {
-                return const Card(
+                return Container(
                   color: Colors.black,
                 );
               }
